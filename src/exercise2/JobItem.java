@@ -1,32 +1,20 @@
 package exercise2;
 
-public class JobItem {
+public abstract class JobItem {
 
-	private int quantity;
-	private int unitPrice;
-	private Employee employee;
-	private boolean isLabor;
+    private int quantity;
 
-	public JobItem(int quantity, int unitPrice, boolean isLabor, Employee employee) {
-		this.quantity = quantity;
-		this.unitPrice = unitPrice;
-		this.isLabor = isLabor;
-		this.employee = employee;
-	}
+    public JobItem(int quantity) {
+        this.quantity = quantity;
+    }
 
-	public int getTotalPrice() {
-		return quantity * getUnitPrice();
-	}
+    public int getQuantity() {
+        return quantity;
+    }
 
-	public int getQuantity() {
-		return quantity;
-	}
+    public int getTotalPrice() {
+        return quantity * getUnitPrice();
+    }
 
-	public int getUnitPrice() {
-		return (isLabor) ? employee.getRate() : unitPrice;
-	}
-
-	public Employee getEmployee() {
-		return employee;
-	}
+    protected abstract int getUnitPrice();
 }

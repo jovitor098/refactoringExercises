@@ -8,8 +8,8 @@ public class Person {
 		department = arg;
 	}
 
-	public Person getManager() {
-		return department.getManager();
+	public Department getDepartment() {
+		return department;
 	}
 
 }

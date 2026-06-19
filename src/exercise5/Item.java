@@ -22,5 +22,12 @@ public class Item {
 		return 0;
 	}
 
+	float getTotalPrice() {
+		float price = getPrice() + getTax();
+		if (isOnSale())
+			price = price - getSaleDiscount() * price;
+		return price;
+	}
+
 	//...
 }
